@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Quiz - Great Learning</title>
+  <link rel="stylesheet" href="assets/main.css">
+</head>
+<body class="light-mode">
+  <canvas id="tech-bg"></canvas>
+
+  <!-- Navbar -->
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <a href="index.html">Great Learning</a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="aicourse.html">AI Course</a>
+      </nav>
+      <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">☀️</button>
+    </div>
+  </header>
+
+  <!-- Quiz Section -->
+  <section class="quiz-section">
+    <div class="container">
+      <h2>Artificial Intelligence Quiz 🤖</h2>
+      <p>Test your understanding of AI fundamentals!</p>
+
+      <div id="quiz-container">
+        <div id="question-box">
+          <h3 id="question">Loading question...</h3>
+          <div id="options"></div>
+        </div>
+
+        <button id="next-btn" class="course-btn" disabled>Next</button>
+      </div>
+
+      <div id="result-box" style="display:none;">
+        <h3>Your Score: <span id="score"></span></h3>
+        <button id="restart-btn" class="course-btn">Restart Quiz</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Great Learning. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+
+  <!-- QUIZ SCRIPT -->
+  <script>
+    // ================== AI QUIZ SCRIPT ==================
+    const quizData = [
+      {
+        question: "What does AI stand for?",
+        options: ["Automated Interface", "Artificial Intelligence", "Advanced Innovation", "Automated Integration"],
+        answer: 1
+      },
+      {
+        question: "Which of the following is a branch of AI?",
+        options: ["Machine Learning", "Quantum Mechanics", "Astrophysics", "Molecular Biology"],
+        answer: 0
+      },
+      {
+        question: "Who is considered the father of Artificial Intelligence?",
+        options: ["Alan Turing", "Elon Musk", "Andrew Ng", "John McCarthy"],
+        answer: 3
+      },
+      {
+        question: "Which language is most commonly used for AI programming?",
+        options: ["Python", "C++", "Java", "Ruby"],
+        answer: 0
+      },
+      {
+        question: "What is the goal of AI?",
+        options: ["To replace humans", "To create systems that can learn and think", "To automate hardware", "To improve database storage"],
+        answer: 1
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const nextBtn = document.getElementById("next-btn");
+    const resultBox = document.getElementById("result-box");
+    const scoreEl = document.getElementById("score");
+    const restartBtn = document.getElementById("restart-btn");
+
+    function loadQuestion() {
+      const q = quizData[currentQuestion];
+      questionEl.textContent = q.question;
+      optionsEl.innerHTML = "";
+
+      q.options.forEach((option, index) => {
+        const btn = document.createElement("button");
+        btn.textContent = option;
+        btn.classList.add("course-btn");
+        btn.style.display = "block";
+        btn.style.margin = "10px auto";
+        btn.onclick = () => selectAnswer(index);
+        optionsEl.appendChild(btn);
+      });
+
+      nextBtn.disabled = true;
+    }
+
+    function selectAnswer(index) {
+      const correct = quizData[currentQuestion].answer;
+      const buttons = optionsEl.querySelectorAll("button");
+
+      buttons.forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === correct) btn.style.backgroundColor = "#28a745";
+        else if (i === index && i !== correct) btn.style.backgroundColor = "#dc3545";
+      });
+
+      if (index === correct) score++;
+      nextBtn.disabled = false;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) loadQuestion();
+      else showResult();
+    });
+
+    function showResult() {
+      document.getElementById("quiz-container").style.display = "none";
+      resultBox.style.display = "block";
+      scoreEl.textContent = `${score} / ${quizData.length}`;
+    }
+
+    restartBtn.addEventListener("click", () => {
+      currentQuestion = 0;
+      score = 0;
+      resultBox.style.display = "none";
+      document.getElementById("quiz-container").style.display = "block";
+      loadQuestion();
+    });
+
+    // Initialize quiz
+    loadQuestion();
+  </script>
+</body>
+</html>

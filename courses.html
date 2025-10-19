@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Great Learning - Courses</title>
+  <link rel="stylesheet" href="assets/main.css">
+</head>
+<body class="light-mode">
+    <canvas id="tech-bg"></canvas>
+
+  <!-- ================== Navbar ================== -->
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <a href="index.html">Great Learning</a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <!-- Light/Dark mode toggle button -->
+      <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">☀️</button>
+    </div>
+  </header>
+
+  <!-- ================== Hero Section ================== -->
+  <section class="hero" style="background-image: url('assets/images/banner.jpg');">
+    <div class="hero-content">
+      <h1>Our Courses & Activities</h1>
+      <p>Choose from a variety of online classes, quizzes, and discussions</p>
+    </div>
+  </section>
+
+<!-- ========== -->
+
+<section class="courses">
+    <div class="container">
+      <h2>Our Courses</h2>
+      <div class="course-cards">
+        <!-- Repeat for each course/activity -->
+        <div class="course-card">
+          <div class="courseimg">
+          <img src=".\assets\images\aipost.jpg" alt="Course Image">
+          </div>
+          <!-- <h3>Artificial Intelligence(AI)</h3> -->
+          <p>Unlock the power of intelligent systems that shape the future. Our AI course equips learners with hands-on experience in building smart applications, data-driven models, and automation tools. Learn to design solutions that think, adapt, and evolve.</p>
+           <p><b>Focus Keywords:</b> Neural networks, automation, natural language processing, computer vision, real-world projects.</p>
+           <p><b>Ideal Audience:</b> Students, tech enthusiasts, and professionals seeking to master AI-driven problem solving</p>
+            <a href=".\aicourse.html" class="course-btn">Start Now</a>
+        </div>
+
+        <div class="course-card">
+          <div class="courseimg">
+          <img src=".\assets\images\mlpost.jpg" alt="Course Image">
+          </div>
+          <!-- <h3>Machine Learning(ML)</h3> -->
+          <p>Transform data into decisions with our Machine Learning course. Dive into algorithms, predictive analytics, and model optimization to make systems learn from experience. Gain practical exposure to real datasets and tools like Python, TensorFlow, and Scikit-learn to build a future in data intelligence.</p>
+          <p><b>Focus Keywords:</b> Supervised & unsupervised learning, predictive modeling, Python, data science.</p>
+          <p><b>Ideal Audience:</b> Aspiring data scientists, engineers, and problem-solvers passionate about data-driven innovation</p>
+          <a href="#" class="course-btn">Start Now</a>
+        </div>
+
+        <div class="course-card">
+          <div class="courseimg">
+          <img src=".\assets\images\clpost.jpg" alt="Course Image">
+          </div>
+          <p>Empower your career with the backbone of modern digital transformation — Cloud Computing. Learn how to design, deploy, and manage applications across AWS, Azure, and Google Cloud. Gain the skills to build scalable, secure, and cost-efficient cloud solutions for global enterprises.</p>
+          <p><b>Focus Keywords:</b> Virtualization, AWS, Azure, cloud architecture, DevOps integration.</p>
+          <p><b>Ideal Audience:</b> IT professionals, developers, and students eager to master scalable infrastructure and cloud technology.</p>
+          <a href="#" class="course-btn">Start Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================== Courses Section ================== -->
+  <section class="courses">
+    <div class="container">
+      <h2>Available Activities</h2>
+
+      <!-- Filter / Search Section (Optional) -->
+      <!-- Optional Section: You can implement filters or search here -->
+      <!-- <div class="filter-section">
+        <select>
+          <option value="all">All</option>
+          <option value="online-class">Online Class</option>
+          <option value="quiz">Quiz</option>
+          <option value="discussion">Discussion</option>
+        </select>
+      </div> -->
+
+      <div class="course-cards">
+        <!-- Online Class Card -->
+        <div class="course-card">
+          <img src="assets/images/courses-01.jpg" alt="Course Image">
+          <h3>Online Class</h3>
+          <p>Interactive lessons with expert instructors</p>
+          <a href="#" class="course-btn">Start Now</a>
+        </div>
+
+        <!-- Quiz Card -->
+        <div class="course-card">
+          <img src="assets/images/courses-02.jpg" alt="Quiz Image">
+          <h3>Quiz</h3>
+          <p>Test your knowledge and track your progress</p>
+          <a href="#" class="course-btn">Attempt Quiz</a>
+        </div>
+
+        <!-- Discussion Card -->
+        <div class="course-card">
+          <img src="assets/images/courses-03.jpg" alt="Discussion Image">
+          <h3>Discussion</h3>
+          <p>Engage with peers and instructors</p>
+          <a href="#" class="course-btn">Join Discussion</a>
+        </div>
+
+        <!-- Repeat cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== Optional Video Section ================== -->
+  <!-- Optional Section: You can remove this if not needed -->
+  <section class="video-section">
+    <div class="container">
+      <h2>Course Overview Video</h2>
+      <div class="videoctr">
+      <video controls>
+        <source src="assets/video/course-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <video controls>
+        <source src="assets/video/course-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <video controls>
+        <source src="assets/video/course-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================== Footer ================== -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Grad School. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

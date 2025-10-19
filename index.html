@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Great Learning</title>
+  <!-- Link to main CSS -->
+  <link rel="stylesheet" href="assets/main.css">
+</head>
+<body class="light-mode">
+    <canvas id="tech-bg"></canvas>
+
+  
+  <!-- ================== Navbar ================== -->
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <!-- Change logo image/text here -->
+        <a href="index.html">Great Learning</a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <!-- Light/Dark mode toggle button -->
+      <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">☀️</button>
+    </div>
+  </header>
+
+  <!-- ================== Hero Section ================== -->
+  <!-- Hero Section (Static Banner). Replace 'banner.jpg' with your preferred hero image -->
+  <section class="hero" style="background-image: url('assets/images/banner.jpg');">
+    <div class="hero-content">
+      <h1>Welcome to Great Learning</h1>
+      <p>11 Years of Accelerating Career Growth with Future-Ready Learning Anytime, Anywhere.</p>
+      <a href="courses.html" class="cta-button">Explore Courses</a>
+    </div>
+  </section>
+
+  <!-- ================== About Section ================== -->
+  <section class="about">
+    <!-- Optional Section: You can remove this if not needed -->
+    <div class="container">
+      <h2>About Us</h2>
+      <p>Great Learning is a global edtech leader empowering professionals and students with industry-relevant programs in AI, Data Science, Technology, and Management. Partnering with top universities, we deliver flexible and practical learning that bridges the gap between education and career growth. Our mission is to make learning impactful, future-ready, and globally recognized.</p>
+    </div>
+  </section>
+
+  <!-- ================== Courses/Activities Section ================== -->
+  <section class="courses">
+    <div class="container">
+      <h2>Our Courses</h2>
+      <div class="course-cards">
+        <!-- Repeat for each course/activity -->
+        <div class="course-card">
+          <div class="courseimg">
+          <img src=".\assets\images\aipost.jpg" alt="Course Image">
+          </div>
+          <!-- <h3>Artificial Intelligence(AI)</h3> -->
+          <p>Unlock the power of intelligent systems that shape the future. Our AI course equips learners with hands-on experience in building smart applications, data-driven models, and automation tools. Learn to design solutions that think, adapt, and evolve.</p>
+           <p><b>Focus Keywords:</b> Neural networks, automation, natural language processing, computer vision, real-world projects.</p>
+           <p><b>Ideal Audience:</b> Students, tech enthusiasts, and professionals seeking to master AI-driven problem solving</p>
+            <a href=".\aicourse.html" class="course-btn">Start Now</a>
+        </div>
+
+        <div class="course-card">
+          <div class="courseimg">
+          <img src=".\assets\images\mlpost.jpg" alt="Course Image">
+          </div>
+          <!-- <h3>Machine Learning(ML)</h3> -->
+          <p>Transform data into decisions with our Machine Learning course. Dive into algorithms, predictive analytics, and model optimization to make systems learn from experience. Gain practical exposure to real datasets and tools like Python, TensorFlow, and Scikit-learn to build a future in data intelligence.</p>
+          <p><b>Focus Keywords:</b> Supervised & unsupervised learning, predictive modeling, Python, data science.</p>
+          <p><b>Ideal Audience:</b> Aspiring data scientists, engineers, and problem-solvers passionate about data-driven innovation</p>
+          <a href=".\mlcourse.html" class="course-btn">Start Now</a>
+        </div>
+
+        <div class="course-card">
+          <div class="courseimg">
+          <img src=".\assets\images\clpost.jpg" alt="Course Image">
+          </div>
+          <p>Empower your career with the backbone of modern digital transformation — Cloud Computing. Learn how to design, deploy, and manage applications across AWS, Azure, and Google Cloud. Gain the skills to build scalable, secure, and cost-efficient cloud solutions for global enterprises.</p>
+          <p><b>Focus Keywords:</b> Virtualization, AWS, Azure, cloud architecture, DevOps integration.</p>
+          <p><b>Ideal Audience:</b> IT professionals, developers, and students eager to master scalable infrastructure and cloud technology.</p>
+          <a href=".\cdcourse.html" class="course-btn">Start Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== Video Section ================== -->
+  <!-- Optional Section: You can remove this if not needed -->
+  <section class="video-section">
+    <div class="container">
+      <h2>Introduction Video</h2>
+      <video controls>
+        <source src="assets/video/course-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <!-- ================== Testimonials Section ================== -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our Students Say</h2>
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <img src="assets/images/author-01.png" alt="Student Photo">
+          <p>"This course changed my life!"</p>
+          <h4>Jane Doe</h4>
+        </div>
+        <div class="testimonial-card">
+          <img src="assets/images/author-02.png" alt="Student Photo">
+          <p>"Amazing instructors and content."</p>
+          <h4>John Smith</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== Contact Section ================== -->
+  <section class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <!-- Modify form fields if needed -->
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================== Footer ================== -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Great Learning. All rights reserved.</p>
+      <!-- Optional: Add social links here -->
+    </div>
+  </footer>
+
+  <!-- ================== Scripts ================== -->
+  <script src=".\assets\script.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Computing Quiz - Great Learning</title>
+  <link rel="stylesheet" href="assets/main.css">
+</head>
+<body class="light-mode">
+  <canvas id="tech-bg"></canvas>
+
+  <!-- Navbar -->
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <a href="index.html">Great Learning</a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="cdcourse.html">Cloud Computing Course</a>
+      </nav>
+      <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">☀️</button>
+    </div>
+  </header>
+
+  <!-- Quiz Section -->
+  <section class="quiz-section">
+    <div class="container">
+      <h2>Cloud Computing Quiz ☁️</h2>
+      <p>Assess your understanding of Cloud Computing fundamentals!</p>
+
+      <div id="quiz-container">
+        <div id="question-box">
+          <h3 id="question">Loading question...</h3>
+          <div id="options"></div>
+        </div>
+
+        <button id="next-btn" class="course-btn" disabled>Next</button>
+      </div>
+
+      <div id="result-box" style="display:none;">
+        <h3>Your Score: <span id="score"></span></h3>
+        <button id="restart-btn" class="course-btn">Restart Quiz</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Great Learning. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+
+  <!-- ================== CLOUD COMPUTING QUIZ SCRIPT ================== -->
+  <script>
+    const quizData = [
+      {
+        question: "What is Cloud Computing?",
+        options: [
+          "A way to physically store data on a personal computer",
+          "The delivery of computing services over the internet",
+          "A method of programming robots",
+          "A type of desktop operating system"
+        ],
+        answer: 1
+      },
+      {
+        question: "Which of the following is NOT a cloud service model?",
+        options: [
+          "Infrastructure as a Service (IaaS)",
+          "Platform as a Service (PaaS)",
+          "Software as a Service (SaaS)",
+          "Database as a Service (DaaS)"
+        ],
+        answer: 3
+      },
+      {
+        question: "Which company offers AWS cloud services?",
+        options: [
+          "Microsoft",
+          "Google",
+          "Amazon",
+          "IBM"
+        ],
+        answer: 2
+      },
+      {
+        question: "Which of these is an example of SaaS?",
+        options: [
+          "Google Docs",
+          "Microsoft Azure",
+          "Amazon EC2",
+          "Docker"
+        ],
+        answer: 0
+      },
+      {
+        question: "Which of these benefits is associated with cloud computing?",
+        options: [
+          "Scalability and flexibility",
+          "Limited accessibility",
+          "High upfront hardware cost",
+          "Requires on-premise servers"
+        ],
+        answer: 0
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const nextBtn = document.getElementById("next-btn");
+    const resultBox = document.getElementById("result-box");
+    const scoreEl = document.getElementById("score");
+    const restartBtn = document.getElementById("restart-btn");
+
+    function loadQuestion() {
+      const q = quizData[currentQuestion];
+      questionEl.textContent = q.question;
+      optionsEl.innerHTML = "";
+
+      q.options.forEach((option, index) => {
+        const btn = document.createElement("button");
+        btn.textContent = option;
+        btn.classList.add("course-btn");
+        btn.style.display = "block";
+        btn.style.margin = "10px auto";
+        btn.onclick = () => selectAnswer(index);
+        optionsEl.appendChild(btn);
+      });
+
+      nextBtn.disabled = true;
+    }
+
+    function selectAnswer(index) {
+      const correct = quizData[currentQuestion].answer;
+      const buttons = optionsEl.querySelectorAll("button");
+
+      buttons.forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === correct) btn.style.backgroundColor = "#28a745"; // Green
+        else if (i === index && i !== correct) btn.style.backgroundColor = "#dc3545"; // Red
+      });
+
+      if (index === correct) score++;
+      nextBtn.disabled = false;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) loadQuestion();
+      else showResult();
+    });
+
+    function showResult() {
+      document.getElementById("quiz-container").style.display = "none";
+      resultBox.style.display = "block";
+      scoreEl.textContent = `${score} / ${quizData.length}`;
+    }
+
+    restartBtn.addEventListener("click", () => {
+      currentQuestion = 0;
+      score = 0;
+      resultBox.style.display = "none";
+      document.getElementById("quiz-container").style.display = "block";
+      loadQuestion();
+    });
+
+    // Initialize quiz
+    loadQuestion();
+  </script>
+</body>
+</html>

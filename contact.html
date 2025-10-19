@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Great Learning</title>
+  <link rel="stylesheet" href="assets/main.css">
+</head>
+<body class="light-mode">
+    <canvas id="tech-bg"></canvas>
+
+  <!-- ================== Navbar ================== -->
+  <header>
+    <div class="navbar-container">
+      <div class="logo">
+        <a href="index.html">Great Learning</a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <!-- Light/Dark mode toggle button -->
+      <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">☀️</button>
+    </div>
+  </header>
+
+  <!-- ================== Hero Section ================== -->
+  <section class="hero" style="background-image: url('assets/images/banner.jpg');">
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+      <p>We’d love to hear from you!</p>
+    </div>
+  </section>
+
+  <!-- ================== Contact Form Section ================== -->
+  <section class="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p>Fill out the form below and we’ll get back to you as soon as possible.</p>
+
+      <form id="contact-form">
+        <!-- Name -->
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <!-- Email -->
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <!-- Message -->
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+        <!-- Submit Button -->
+        <button type="submit" class="course-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+  <!-- ================== Footer ================== -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Great Learning. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

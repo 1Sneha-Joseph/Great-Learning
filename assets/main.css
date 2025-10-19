@@ -1,0 +1,358 @@
+/* ================== Main CSS ================== */
+
+/* --------- Global Styles --------- */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #ffffff; /* Light mode default */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+  position: relative;
+}
+
+/* ---------------- Light/Dark Mode ---------------- */
+body.dark-mode {
+  background-color: #1c1c1c;
+  color: #f1f1f1;
+}
+
+body.dark-mode .navbar-container {
+  background-color: #111;
+}
+
+body.dark-mode .cta-button,
+body.dark-mode .course-btn {
+  background-color: #2c7be5;
+  color: #fff;
+}
+
+/* --------- Navbar --------- */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #0056b3; /* Navbar blue */
+  color: #fff;
+}
+
+.navbar-container .logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar-container .nav-links a {
+  margin-left: 20px;
+  color: #fff;
+  font-weight: 500;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* --------- Hero Section --------- */
+.hero {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #2c7be5;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+/* --------- Sections --------- */
+section {
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --------- About Section --------- */
+.about h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 36px;
+}
+
+.about p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+/* --------- Courses / Activities Section --------- */
+.courses h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 36px;
+}
+
+.courseimg{
+  display: flex;
+  width:50vh;
+  height:50vh;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.course-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.course-card {
+  flex-wrap: wrap;
+  position:center;
+  flex: 1 1 calc(33.333% - 20px);
+  /* background-color: #f5f5f5; */
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card h3 {
+  margin: 15px 0 10px;
+}
+
+.course-card p {
+  padding: 0 10px;
+  font-size: 16px;
+  color: #666;
+}
+
+.course-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 20px;
+  background-color: #2c7be5;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.course-btn:hover {
+  background-color: #0056b3;
+}
+
+/* --------- Video Section --------- */
+.video-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.video-section video {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+/* --------- Testimonials Section --------- */
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.testimonial-card {
+  flex: 1 1 calc(50% - 20px);
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.testimonial-card img {
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.testimonial-card h4 {
+  margin-top: 10px;
+}
+
+/* --------- Contact Section --------- */
+.contact h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+}
+
+#contact-form button {
+  padding: 12px 25px;
+  background-color: #2c7be5;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+  background-color: #0056b3;
+}
+
+/* --------- Footer --------- */
+footer {
+  background-color: #0056b3;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* --------- Responsive Media Queries --------- */
+@media (max-width: 992px) {
+  .course-cards {
+    flex-direction: column;
+  }
+  .course-card {
+    flex: 1 1 100%;
+  }
+  .testimonial-cards {
+    flex-direction: column;
+  }
+  .testimonial-card {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 32px;
+  }
+  .hero-content p {
+    font-size: 16px;
+  }
+  .navbar-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-links a {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+}
+
+.reviewdata{
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 36px;
+}
+
+/* ===== Tech Constellation Background ===== */
+#tech-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* keeps it behind all content */
+  background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000 100%);
+}
+
+
+/* ===== Responsive Video Wrapper ===== */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
